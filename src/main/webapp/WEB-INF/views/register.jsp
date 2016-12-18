@@ -17,11 +17,11 @@
 
 <sf:form method="post" modelAttribute="user">
     Username: <sf:input path="username"/>
-                <sf:errors path="username"/> <br>
+    <sf:errors path="username"/> <br>
     Password: <sf:password path="password"/>
-              <sf:errors path="password"/> <br>
-    E-mail:   <sf:input path="email" type="email"/>
-              <sf:errors path="email"/> <br>
+    <sf:errors path="password"/> <br>
+    E-mail: <sf:input path="email" type="email"/>
+    <sf:errors path="email"/> <br>
     <input type="submit" value="Register"> <br>
 </sf:form>
 

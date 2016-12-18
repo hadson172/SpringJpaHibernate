@@ -14,17 +14,16 @@
 <body>
 
 
-
 <sf:form method="post" modelAttribute="user" acceptCharset="UTF-8">
-FirstName: <sf:input path="firstName"/> <br>
-LastName: <sf:input path="lastName"/> <br>
-Height: <sf:input path="details.HEIGHT"/> <br>
-Weight: <sf:input path="details.WEIGHT"/> <br>
-Age:    <sf:input path="details.age" /> <br>
-Sex:    <sf:select path="details.sex">
-<sf:options items="${user.details.sexList}"/>
+    FirstName: <sf:input path="firstName"/> <br>
+    LastName: <sf:input path="lastName"/> <br>
+    Height: <sf:input path="details.HEIGHT"/> <br>
+    Weight: <sf:input path="details.WEIGHT"/> <br>
+    Age: <sf:input path="details.age"/> <br>
+    Sex: <sf:select path="details.sex">
+    <sf:options items="${user.details.sexList}"/>
 </sf:select> <br>
-<input type="submit" value="Apply"> <br>
+    <input type="submit" value="Apply"> <br>
 </sf:form>
 
 </body>

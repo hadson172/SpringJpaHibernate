@@ -6,8 +6,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
 @Embeddable
-public class PhysicalDetails
-{
+public class PhysicalDetails {
 
     private int WEIGHT;
     private int HEIGHT;
@@ -17,9 +16,7 @@ public class PhysicalDetails
     private Sex sex;
 
 
-
-    public PhysicalDetails()
-    {
+    public PhysicalDetails() {
 
     }
 
@@ -30,40 +27,39 @@ public class PhysicalDetails
         this.sex = sex;
     }
 
-    public void setWEIGHT(int WEIGHT) {
-        this.WEIGHT = WEIGHT;
-    }
-
-    public void setHEIGHT(int HEIGHT) {
-        this.HEIGHT = HEIGHT;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setSex(Sex sex) {
-        this.sex = sex;
-    }
-
     public int getWEIGHT() {
         return WEIGHT;
+    }
+
+    public void setWEIGHT(int WEIGHT) {
+        this.WEIGHT = WEIGHT;
     }
 
     public int getHEIGHT() {
         return HEIGHT;
     }
 
+    public void setHEIGHT(int HEIGHT) {
+        this.HEIGHT = HEIGHT;
+    }
+
     public int getAge() {
         return age;
     }
 
-    public Sex[] getSexList()
-    {
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public Sex[] getSexList() {
         return Sex.values();
     }
 
     public Sex getSex() {
         return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
     }
 }

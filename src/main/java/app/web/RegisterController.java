@@ -2,9 +2,7 @@ package app.web;
 
 
 import app.daos.UserDAO;
-import app.daos.UserRepository;
 import app.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -17,41 +15,36 @@ import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/register")
-public class RegisterController
-{
+public class RegisterController {
+
     private UserDAO userDao;
 
     @Inject
-    public RegisterController(UserDAO userDao)
-    {
+    public RegisterController(UserDAO userDao) {
         this.userDao = userDao;
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showFrom(Model model)
-    {
-        model.addAttribute("user",new User());
+    public String showFrom(Model model) {
+        model.addAttribute("user", new User());
         return "register";
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String processRegistration(@Valid User user,Errors errors, RedirectAttributes model)
-    {
-        if(errors.hasErrors())
-        {
+    public String processRegistration(@Valid User user, Errors errors, RedirectAttributes model) {
+        if (errors.hasErrors()) {
             return "register";
         }
 
 
-        if(!userDao.addUserIfNotExists(user))
-        {
-            errors.rejectValue("username",user.getUsername(),"User with this username exists");
+        if (!userDao.addUserIfNotExists(user)) {
+            errors.rejectValue("username", user.getUsername(), "User with this username exists");
             return "register";
         }
 
 
-        model.addAttribute("username",user.getUsername());
-        model.addFlashAttribute("user",user);
+        model.addAttribute("username", user.getUsername());
+        model.addFlashAttribute("user", user);
         return "redirect:/users/{username}";
     }
 }

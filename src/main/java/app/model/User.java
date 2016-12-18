@@ -1,22 +1,19 @@
 package app.model;
 
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
+import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Email;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 
 @Entity
 @Table(name = "Users")
-public class User
-{
+public class User {
     @Id
     @GeneratedValue
     private Long id;
@@ -26,11 +23,11 @@ public class User
 
 
     @NotNull
-    @Size(min = 4,max = 12)
+    @Size(min = 4, max = 12)
     private String username;
 
 
-    @Size(min = 4,max = 12)
+    @Size(min = 4, max = 12)
     private String password;
 
     @Email
@@ -40,14 +37,11 @@ public class User
     private PhysicalDetails details;
 
 
-
-    public User()
-    {
+    public User() {
         details = new PhysicalDetails();
     }
 
-    public User(String firstName, String lastName, String username, String password, String email)
-    {
+    public User(String firstName, String lastName, String username, String password, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -57,26 +51,24 @@ public class User
     }
 
 
-    public String getUsername()
-    {
+    public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
         return password;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public void setEmail(String email) {
@@ -101,6 +93,10 @@ public class User
 
     public PhysicalDetails getDetails() {
         return details;
+    }
+
+    public void setDetails(PhysicalDetails details) {
+        this.details = details;
     }
 
     public Long getId() {
@@ -130,9 +126,5 @@ public class User
         result = 31 * result + password.hashCode();
         result = 31 * result + email.hashCode();
         return result;
-    }
-
-    public void setDetails(PhysicalDetails details) {
-        this.details = details;
     }
 }

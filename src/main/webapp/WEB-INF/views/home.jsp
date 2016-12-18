@@ -7,9 +7,9 @@
     <title>Hello</title>
 </head>
 <body>
-    <a href="/register">Register</a>
-    <a href="/login">Login</a>
-    <a href="/users">Users</a> <br>
+<a href="/register">Register</a>
+<a href="/login">Login</a>
+<a href="/users">Users</a> <br>
 </body>
 </html>
       

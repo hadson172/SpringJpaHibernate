@@ -16,14 +16,13 @@
 <body>
 
 
-
 <label>FirstName: </label> ${user.firstName} <br>
 <label>LastName : </label> ${user.lastName} <br>
-<label>Email    : </label> ${user.email}    <br>
-<label>Age      : </label> ${user.details.age} <br>
-<label>Height   : </label> ${user.details.HEIGHT} <br>
-<label>Weight   : </label> ${user.details.WEIGHT} <br>
-<label>Sex      : </label> ${user.details.sex} <br>
+<label>Email : </label> ${user.email} <br>
+<label>Age : </label> ${user.details.age} <br>
+<label>Height : </label> ${user.details.HEIGHT} <br>
+<label>Weight : </label> ${user.details.WEIGHT} <br>
+<label>Sex : </label> ${user.details.sex} <br>
 <a href="/users/${user.username}/settings">Settings</a> <br>
 
 
